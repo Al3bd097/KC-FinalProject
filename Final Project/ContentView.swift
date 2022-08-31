@@ -24,15 +24,16 @@ struct ContentView: View {
                     }
                 
                 LocationsView()
+                    .environmentObject(LocationsViewModel())
                     .tabItem {
                             Image(systemName: "map.fill")
                         Text("Home")
                     }
                 
-                general()
+                profileView()
                     .tabItem {
-                        Image(systemName: "ellipsis")
-                        Text("More")
+                        Image(systemName: "person.circle")
+                        Text("Profile")
                     }
                     
                 

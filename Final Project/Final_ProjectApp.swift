@@ -6,14 +6,11 @@
 //
 
 import SwiftUI
-
 @main
 struct Final_ProjectApp: App {
-    
     var body: some Scene {
         WindowGroup {
-            LoginView()
-                
+                ContentView()
         }
     }
 }
