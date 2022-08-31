@@ -12,7 +12,7 @@ struct ContentView: View {
     
     @EnvironmentObject private var vm: LocationsViewModel
     init() {
-        UITabBar.appearance().backgroundColor = UIColor.white
+        UITabBar.appearance().backgroundColor = UIColor.clear
     }
     var body: some View {
         ZStack {
