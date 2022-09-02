@@ -36,7 +36,7 @@ class LocationsDataService {
             link: "https://goo.gl/maps/tEqDCt7WUR88WnTR6"),
         Location(
             name: "The Assima Mall",
-            cityName: "Rome",
+            cityName: "Kuwait City",
             coordinates: CLLocationCoordinate2D(latitude: 29.3470933, longitude: 47.9864731),
             description: "The Assima, meaning capital in arabic is a mixed use project developed by Assima Real Estate Company, wholly owned by Salhia Real Estate Company. The project commenced in October 2015 and was completed at the end of 2021. Bringing together all the conveniences of a mini city within the heart of Kuwait City with a total built up area of 380,000 square meters. Featuring three main components which are, a mall with urban parks, a hypermarket, multiple entertainment options, retail and endless options for food and beverage. An office tower with stunning sea-views and cityscapes, and a residence hotel. The project will also feature ample parking to serve the three main highlights of the project.",
             imageNames: [

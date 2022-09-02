@@ -20,7 +20,8 @@ struct contactUsView: View {
             Image("logo")
                 .resizable()
                 .scaledToFit()
-                .offset(y: -330)
+                .frame(width: 300, height: 300)
+                .offset(y: -370)
             VStack{
                 Spacer()
             Text("Send us an Email")

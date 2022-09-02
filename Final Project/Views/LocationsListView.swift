@@ -51,7 +51,7 @@ extension LocationsListView {
             VStack(alignment: .leading) {
                 Text(location.name)
                     .font(.headline)
-                    .foregroundColor(.black)
+                    .foregroundColor(.primary)
                 Text(location.cityName)
                     .font(.subheadline)
                     .foregroundColor(.secondary)

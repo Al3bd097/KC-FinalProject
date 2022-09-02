@@ -11,60 +11,82 @@ struct profileInView: View {
     @Binding var signInSuccess: Bool
     var body: some View {
         
-        ZStack{
-            VStack{
-                HStack{
-                    Image("logo")
+        NavigationView {
+            ZStack{
+                VStack{
+                    HStack{
+                        Image("logo")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 200, height: 200)
+                            .offset(x: -30, y: -70)
+                        Spacer()
+                    }
+                    Spacer()
+                    
+                }
+                VStack{
+                    Image(systemName: "person.circle")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 200, height: 200)
-                        .offset(x: -30, y: -70)
-                    Spacer()
-                }
-                Spacer()
-                
-            }
-            VStack{
-                Image(systemName: "person.circle")
-                    .resizable()
-                    .scaledToFit()
-                    .foregroundColor(.cyan)
-                    .frame(width: 100, height: 100)
-                    .padding()
-                Text("Hello, Abdullah")
-                    .font(.system(size: 30, weight: .medium, design: .serif))
-                VStack{
-                    
-                    RowView(img: "heart", name: "Liked")
-                    RowView(img: "terms", name: "Terms & Conditions")
-                    RowView(img: "contact", name: "Contact us")
-                    
-                    Button {
-                        signInSuccess = false
-                    } label: {
-                        HStack{
-                            Image("car")
+                        .foregroundColor(.cyan)
+                        .frame(width: 100, height: 100)
+                        .padding()
+                    Text("Hello, Abdullah")
+                        .font(.system(size: 30, weight: .medium, design: .serif))
+                    VStack{
+                        
+                        RowView(img: "heart", name: "Liked")
+                        RowView(img: "terms", name: "Terms & Conditions")
+                        
+                        NavigationLink {
+                            contactUsView()
+                        } label: {
+                            Image("contact")
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 40, height: 40)
                                 .foregroundColor(.red)
                                 .padding()
-                            Text("Logout")
+                            Text("Contact Us")
+                                .foregroundColor(.black)
                                 .font(.system(size: 25, weight: .medium, design: .default))
                             Spacer()
                         }
                         
+                        Divider()
+                            .frame(width: 350, height: 1)
+                        
+                        Button {
+                            signInSuccess = false
+                        } label: {
+                            
+                            HStack{
+                                Image("car")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 40, height: 40)
+                                    .foregroundColor(.red)
+                                    .padding()
+                                Text("Logout")
+                                    .font(.system(size: 25, weight: .medium, design: .default))
+                                Spacer()
+                                
+                            }
+                            
+                        }
+                        Divider()
+                            .frame(width: 350, height: 1)
+
+                        
                     }
-                    Divider()
-                        .frame(width: 350, height: 1)
-
+                    .padding()
                     
-                }
-                .padding()
-                
-                
+                    
 
+                }
             }
+            .navigationBarHidden(true)
         }
     }
 
