@@ -22,7 +22,8 @@ class LocationsDataService {
                 "avenues-2",
                 "avenues-3",
             ],
-            link: "https://goo.gl/maps/yMLGnyUF4QXhZuQ16"),
+            link: "https://goo.gl/maps/yMLGnyUF4QXhZuQ16",
+            height: 1.9),
         Location(
             name: "The 360 mall",
             cityName: "Al-Zahra",
@@ -33,7 +34,8 @@ class LocationsDataService {
                 "360-2",
                 "360-3",
             ],
-            link: "https://goo.gl/maps/tEqDCt7WUR88WnTR6"),
+            link: "https://goo.gl/maps/tEqDCt7WUR88WnTR6",
+            height: 2.0),
         Location(
             name: "The Assima Mall",
             cityName: "Kuwait City",
@@ -44,7 +46,8 @@ class LocationsDataService {
                 "assima-2",
                 "assima-3",
             ],
-            link: "https://goo.gl/maps/8HAXKqftS9yG2Puf6"),
+            link: "https://goo.gl/maps/8HAXKqftS9yG2Puf6",
+            height: 1.9),
         Location(
             name: "Al-Kout",
             cityName: "Fahaheel",
@@ -55,7 +58,8 @@ class LocationsDataService {
                 "kout-2",
                 "kout-3",
             ],
-            link: "https://goo.gl/maps/kE4EeMWZaiWhWxDV6"),
+            link: "https://goo.gl/maps/kE4EeMWZaiWhWxDV6",
+            height: 1.8),
         Location(
             name: "The Gate Mall",
             cityName: "Eqaila",
@@ -66,7 +70,8 @@ class LocationsDataService {
                 "gate-2",
                 "gate-3",
             ],
-            link: "https:goo.gl/maps/oRxyJggY8obh1KMQ6"),
+            link: "https:goo.gl/maps/oRxyJggY8obh1KMQ6",
+            height: 2.2),
         Location(name: "Al-Hamra Tower",
                  cityName: "East-Almaqwa",
                  coordinates: CLLocationCoordinate2D(latitude: 29.379187422693807, longitude: 47.99334578440013),
@@ -75,7 +80,8 @@ class LocationsDataService {
                     "hamra-1",
                     "hamra-2",
                     ],
-                 link: "https://goo.gl/maps/yAky6kYPLk3NjBUd6"),
+                 link: "https://goo.gl/maps/yAky6kYPLk3NjBUd6",
+                 height: 2.1),
         Location(name: "Souk Sharq",
                  cityName: "Sharq",
                  coordinates: CLLocationCoordinate2D(latitude: 29.389769595239873, longitude: 47.9811949110281),
@@ -84,7 +90,8 @@ class LocationsDataService {
                     "sharq-1",
                     "sharq-2",
                  ],
-                 link: "https://goo.gl/maps/nyYMzm25c9GeZ6v5A")
+                 link: "https://goo.gl/maps/nyYMzm25c9GeZ6v5A",
+                 height: 1.7)
     ]
     
 }

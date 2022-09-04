@@ -10,6 +10,7 @@ import MapKit
 
 struct LocationDetailView: View {
     @EnvironmentObject private var vm: LocationsViewModel
+    @State var showList = true
     let location: Location
     
     var body: some View {
@@ -74,6 +75,19 @@ extension LocationDetailView{
             Text(location.description)
                 .font(.subheadline)
                 .foregroundColor(.secondary)
+            HStack{
+            Text("^")
+                    .rotationEffect(Angle(degrees: 90))
+                    .rotationEffect(Angle(degrees: showList ? 90 : 0))
+                    .padding(.top, 0)
+            Text("More Information")
+                .onTapGesture {
+                    showList.toggle()
+                }
+            }
+            if showList{
+                Text("height: \(location.height) ")
+            }
             if let url = URL(string: location.link) {
                 Link("Head there now!", destination: url)
                     .font(.headline)

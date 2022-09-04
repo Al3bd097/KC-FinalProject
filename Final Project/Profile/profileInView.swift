@@ -13,88 +13,107 @@ struct profileInView: View {
         
         NavigationView {
             ZStack{
+                Color.accentColor.ignoresSafeArea()
+                Circle()
+                    .fill(Color.init("basic"))
+                    .frame(width: 600, height: 600)
+                Image("logo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 270, height: 300)
+                    .offset(x: -145,y: -390)
                 VStack{
-                    HStack{
-                        Image("logo")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 200, height: 200)
-                            .offset(x: -30, y: -70)
-                        Spacer()
-                    }
                     Spacer()
-                    
-                }
-                VStack{
-                    Image(systemName: "person.circle")
+                    Image("person")
                         .resizable()
                         .scaledToFit()
-                        .foregroundColor(.cyan)
-                        .frame(width: 100, height: 100)
+                        .foregroundColor(.accentColor)
+                        .frame(width: 200, height: 200)
                         .padding()
-                    Text("Hello, Abdullah")
-                        .font(.system(size: 30, weight: .medium, design: .serif))
-                    VStack{
-                        
-                        RowView(img: "heart", name: "Liked")
-                        RowView(img: "terms", name: "Terms & Conditions")
-                        
-                        NavigationLink {
-                            contactUsView()
-                        } label: {
-                            Image("contact")
+                        .offset( y: -40)
+                    HStack{
+                            Term
+                                .frame(width: 195, height: 180)
+                                .background(.ultraThinMaterial)
+                                .clipShape(Circle())
+                                .offset(y: -30)
+                            Contact
+                                .frame(width: 195, height: 180)
+                                .background(.ultraThinMaterial)
+                                .clipShape(Circle())
+                                .offset(y: -30)
+                    }
+                    
+                    Button {
+                        signInSuccess = false
+                    } label: {
+                        HStack{
+                            Image("car")
                                 .resizable()
                                 .scaledToFit()
                                 .frame(width: 40, height: 40)
                                 .foregroundColor(.red)
-                                .padding()
-                            Text("Contact Us")
-                                .foregroundColor(.black)
-                                .font(.system(size: 25, weight: .medium, design: .default))
-                            Spacer()
+                                .padding(3)
+                            Text("Logout")
+                                .foregroundColor(.primary)
+                                .font(.system(size: 20, weight: .medium, design: .rounded))
+                                .frame(width: 100, height: 50)
                         }
-                        
-                        Divider()
-                            .frame(width: 350, height: 1)
-                        
-                        Button {
-                            signInSuccess = false
-                        } label: {
-                            
-                            HStack{
-                                Image("car")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 40, height: 40)
-                                    .foregroundColor(.red)
-                                    .padding()
-                                Text("Logout")
-                                    .font(.system(size: 25, weight: .medium, design: .default))
-                                Spacer()
-                                
-                            }
-                            
-                        }
-                        Divider()
-                            .frame(width: 350, height: 1)
-
-                        
+                        .background(.ultraThinMaterial)
+                        .cornerRadius(10)
                     }
-                    .padding()
-                    
-                    
-
-                }
+                    Spacer()
             }
             .navigationBarHidden(true)
         }
     }
 
     }
-
+}
 
 struct profileInView_Previews: PreviewProvider {
     static var previews: some View {
         profileInView(signInSuccess: .constant(true))
     }
 }
+
+    extension profileInView {
+
+    private var Term: some View {
+        NavigationLink {
+            termView()
+        } label: {
+            Spacer()
+            Image(systemName: "book.closed.fill")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 40, height: 40)
+                .foregroundColor(.primary)
+                .padding(3)
+            Text("Terms & Conditions")
+                .foregroundColor(.primary)
+                .font(.system(size: 25, weight: .medium, design: .default))
+            Spacer()
+        }
+
+    }
+        private var Contact: some View {
+            NavigationLink {
+                contactUsView()
+            } label: {
+                Spacer()
+                Image("contact")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 40, height: 40)
+                    .foregroundColor(.red)
+                    .padding(3)
+                Text("Contact Us")
+                    .foregroundColor(.black)
+                    .font(.system(size: 25, weight: .medium, design: .default))
+                Spacer()
+            }
+
+        }
+    }
+

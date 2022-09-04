@@ -24,6 +24,7 @@
 		0F78F39428BE0C1C00E0318C /* profileInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F78F39328BE0C1B00E0318C /* profileInView.swift */; };
 		0F78F39828BF674800E0318C /* contactUsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F78F39728BF674800E0318C /* contactUsView.swift */; };
 		0F78F39A28C1FEBB00E0318C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F78F39928C1FEBB00E0318C /* Launch Screen.storyboard */; };
+		0FAFFC3A28C4B312002AB02C /* termView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAFFC3928C4B312002AB02C /* termView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		0F78F39328BE0C1B00E0318C /* profileInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileInView.swift; sourceTree = "<group>"; };
 		0F78F39728BF674800E0318C /* contactUsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = contactUsView.swift; sourceTree = "<group>"; };
 		0F78F39928C1FEBB00E0318C /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		0FAFFC3928C4B312002AB02C /* termView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = termView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				0F19799228B953AA0057BADB /* profileOutView.swift */,
 				0F78F39328BE0C1B00E0318C /* profileInView.swift */,
 				0F78F39728BF674800E0318C /* contactUsView.swift */,
+				0FAFFC3928C4B312002AB02C /* termView.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 				0F20D74C28B778EB00474434 /* LocationPreviewView.swift in Sources */,
 				0F19799528BA39E40057BADB /* homeScreen.swift in Sources */,
 				0F20D74828B7450D00474434 /* LocationsViewModel.swift in Sources */,
+				0FAFFC3A28C4B312002AB02C /* termView.swift in Sources */,
 				0F17C97328B20C130026462D /* ContentView.swift in Sources */,
 				0F20D74628B7424700474434 /* LocationsView.swift in Sources */,
 				0F78F39428BE0C1C00E0318C /* profileInView.swift in Sources */,

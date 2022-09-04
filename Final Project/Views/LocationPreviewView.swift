@@ -82,7 +82,7 @@ struct LocationPreviewView_Previews: PreviewProvider {
          Button {
              vm.sheetLocation = location
          } label: {
-             Text("Learn more")
+             Text("More details")
                  .font(.headline)
                  .frame(width: 125, height: 30)
          }

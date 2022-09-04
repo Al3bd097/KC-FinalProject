@@ -11,23 +11,22 @@ import MapKit
 struct ContentView: View {
     
     @EnvironmentObject private var vm: LocationsViewModel
-    init() {
-        UITabBar.appearance().backgroundColor = UIColor.clear
-    }
+    
     var body: some View {
         ZStack {
+            
             TabView{
-                homeScreen()
-                    .tabItem {
-                        Image(systemName: "house")
-                        Text("Home")
-                    }
+//                homeScreen()
+//                    .tabItem {
+//                        Image(systemName: "house")
+//                        Text("Home")
+//                    }
                 
                 LocationsView()
                     .environmentObject(LocationsViewModel())
                     .tabItem {
                             Image(systemName: "map.fill")
-                        Text("Home")
+                        Text("Map")
                     }
                 
                 profileView()
@@ -48,6 +47,8 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .preferredColorScheme(.dark)
             .environmentObject(LocationsViewModel())
+            .previewInterfaceOrientation(.portrait)
     }
 }
