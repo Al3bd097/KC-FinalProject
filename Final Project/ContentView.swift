@@ -27,7 +27,6 @@ struct ContentView: View {
                     .tabItem {
                             Image(systemName: "map.fill")
                         Text("Map")
-                            
                     }
                 
                 profileView()
@@ -48,7 +47,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .preferredColorScheme(.dark)
             .environmentObject(LocationsViewModel())
     }
 }

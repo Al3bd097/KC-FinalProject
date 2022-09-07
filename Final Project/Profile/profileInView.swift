@@ -49,10 +49,12 @@ struct profileInView: View {
                         signInSuccess = false
                     } label: {
                         HStack{
+                            
                             Text("Logout")
-                                .foregroundColor(.primary)
+                                .foregroundColor(.white)
                                 .font(.system(size: 20, weight: .medium, design: .rounded))
                                 .frame(width: 300, height: 50)
+                            
                         }
                         .background(.black)
                         .cornerRadius(10)
@@ -95,7 +97,7 @@ struct profileInView_Previews: PreviewProvider {
 
             Text("Terms & Conditions")
                 .underline()
-                .foregroundColor(.primary)
+                .foregroundColor(.white)
                 .font(.system(size: 15, weight: .medium, design: .default))
             Spacer()
         }

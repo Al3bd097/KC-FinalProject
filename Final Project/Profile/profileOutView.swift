@@ -90,6 +90,7 @@ struct profileOutView: View {
 struct profileOutView_Previews: PreviewProvider {
     static var previews: some View {
         profileOutView(signInSuccess: .constant(false))
+            .preferredColorScheme(.dark)
     }
 }
 extension profileOutView {
@@ -146,14 +147,18 @@ private var terms: some View {
                                 .scaledToFit()
                                 .frame(width: 350, height: 400)
                                 .padding()
-                               HStack {
-                                   Text("Let's")
-                                       .font(.system(size: 50, weight: .medium, design: .default))
-                                   Spacer()
-                               }
-                               .frame(width: 120, height: 6)
+                            VStack {
+                                HStack {
+                                       Text("Let's")
+                                           .foregroundColor(.black)
+                                           .font(.system(size: 50, weight: .medium, design: .default))
+                                       Spacer()
+                                   }
+                                .padding(.leading)
+                            }
                             HStack {
                                 Text("Get")
+                                    .foregroundColor(.black)
                                     .font(.system(size: 50, weight: .medium, design: .default))
                                     .padding(.leading)
                                 Text("Started!")
@@ -163,20 +168,18 @@ private var terms: some View {
                                }
                                }
                             VStack{
-                                
                                TextField("Username", text: $username)
                                    .padding()
                                    .frame(width: 350, height: 60)
-                                   .background(.gray.opacity(0.1))
+                                   .background(Color("basic"))
                                    .cornerRadius(24)
                                    .border(.red, width: CGFloat(wrongUsername))
                                SecureField("Password", text: $password)
                                    .padding()
                                    .frame(width: 350, height: 60)
-                                   .background(.gray.opacity(0.1))
+                                   .background(Color("basic"))
                                    .cornerRadius(24)
                                    .border(.red, width: CGFloat(wrongPassword))
-
                                }
                                
                                Button("Login") {
