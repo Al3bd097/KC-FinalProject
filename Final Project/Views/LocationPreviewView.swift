@@ -70,10 +70,12 @@ struct LocationPreviewView_Previews: PreviewProvider {
          VStack(alignment: .leading, spacing: 4) {
              
              Text(location.name)
+                 .foregroundColor(.primary)
                  .font(.title2)
                  .fontWeight(.bold)
              
              Text(location.cityName)
+                 .foregroundColor(.secondary)
                  .font(.subheadline)
          }
          .frame(maxWidth: .infinity, alignment: .leading)

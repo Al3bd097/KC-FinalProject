@@ -13,15 +13,12 @@ struct profileInView: View {
         
         NavigationView {
             ZStack{
-                Color.accentColor.ignoresSafeArea()
+                Color("accent").ignoresSafeArea()
                 Circle()
-                    .fill(Color.init("basic"))
+                    .fill(Color.black)
                     .frame(width: 600, height: 600)
-                Image("logo")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 270, height: 300)
-                    .offset(x: -145,y: -390)
+                    .shadow(radius: 45)
+                
                 VStack{
                     Spacer()
                     Image("person")
@@ -31,49 +28,60 @@ struct profileInView: View {
                         .frame(width: 200, height: 200)
                         .padding()
                         .offset( y: -40)
-                    HStack{
-                            Term
-                                .frame(width: 195, height: 180)
-                                .background(.ultraThinMaterial)
-                                .clipShape(Circle())
-                                .offset(y: -30)
-                            Contact
-                                .frame(width: 195, height: 180)
-                                .background(.ultraThinMaterial)
-                                .clipShape(Circle())
-                                .offset(y: -30)
-                    }
                     
+                    Text("Ahmed")
+                        .font(.system(size: 30, weight: .bold, design: .rounded))
+                        .offset( y: -40)
+                    VStack{
+                            
+                            Contact
+                            .frame(width: 300, height: 45)
+                            .background(.ultraThinMaterial)
+                            .cornerRadius(10)
+                        
+                            Term
+                            .frame(width: 300, height: 45)
+                            .cornerRadius(10)
+                    }
+                    .padding(.bottom, 20)
+                    Spacer()
                     Button {
                         signInSuccess = false
                     } label: {
                         HStack{
-                            Image("car")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 40, height: 40)
-                                .foregroundColor(.red)
-                                .padding(3)
                             Text("Logout")
                                 .foregroundColor(.primary)
                                 .font(.system(size: 20, weight: .medium, design: .rounded))
-                                .frame(width: 100, height: 50)
+                                .frame(width: 300, height: 50)
                         }
-                        .background(.ultraThinMaterial)
+                        .background(.black)
                         .cornerRadius(10)
+                        .shadow(radius: 15)
                     }
-                    Spacer()
             }
             .navigationBarHidden(true)
+                ZStack {
+                    VStack {
+                        HStack {
+                            Image("logo")
+                                    .resizable()
+                                    .scaledToFit()
+                                .frame(width: 120, height: 80)
+                            Spacer()
+                        }
+                        Spacer()
+                    }
+                    .frame(width: 420)
+                }
         }
     }
-
     }
 }
 
 struct profileInView_Previews: PreviewProvider {
     static var previews: some View {
         profileInView(signInSuccess: .constant(true))
+            .preferredColorScheme(.dark)
     }
 }
 
@@ -84,15 +92,11 @@ struct profileInView_Previews: PreviewProvider {
             termView()
         } label: {
             Spacer()
-            Image(systemName: "book.closed.fill")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 40, height: 40)
-                .foregroundColor(.primary)
-                .padding(3)
+
             Text("Terms & Conditions")
+                .underline()
                 .foregroundColor(.primary)
-                .font(.system(size: 25, weight: .medium, design: .default))
+                .font(.system(size: 15, weight: .medium, design: .default))
             Spacer()
         }
 
@@ -109,7 +113,7 @@ struct profileInView_Previews: PreviewProvider {
                     .foregroundColor(.red)
                     .padding(3)
                 Text("Contact Us")
-                    .foregroundColor(.black)
+                    .foregroundColor(.primary)
                     .font(.system(size: 25, weight: .medium, design: .default))
                 Spacer()
             }

@@ -16,6 +16,9 @@ struct Location: Identifiable, Equatable {
     let imageNames: [String]
     let link: String
     let height: Double
+    let free: Int
+    let capacity: Int
+    let rate: Double
     var id: String {
         name + cityName
     }

@@ -8,17 +8,25 @@
 import SwiftUI
 
 struct homeScreen: View {
-  
+    @EnvironmentObject private var vm: LocationsViewModel
+
+    let location: Location
 
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-        
+        if let imageName = location.imageNames.first{
+            Image(imageName)
+                .resizable()
+                .scaledToFill()
+                .frame(width: 100, height: 100)
+                .cornerRadius(10)
     
+}
 }
 }
 struct homeScreen_Previews: PreviewProvider {
     static var previews: some View {
-        homeScreen()
+        homeScreen(location: LocationsDataService.locations.first!)
+            .environmentObject(LocationsViewModel())
     }
 }
 

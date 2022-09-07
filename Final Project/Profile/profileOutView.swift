@@ -35,15 +35,12 @@ struct profileOutView: View {
     var body: some View {
         NavigationView {
             ZStack{
-                Color.accentColor.ignoresSafeArea()
+                Color("accent").ignoresSafeArea()
                 Circle()
-                    .fill(Color.init("basic"))
+                    .fill(Color.black)
                     .frame(width: 600, height: 600)
-                Image("logo")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 270, height: 300)
-                    .offset(x: -145,y: -390)
+                    .shadow(radius: 45)
+                VStack{
                 VStack{
                     Spacer()
                     Image("person")
@@ -53,27 +50,39 @@ struct profileOutView: View {
                         .frame(width: 200, height: 200)
                         .padding()
                         .offset( y: -40)
-                        HStack{
-                        terms
-                            .frame(width: 195, height: 180)
-                            .background(.ultraThinMaterial)
-                            .clipShape(Circle())
-                            .offset(y: -30)
-                            
-                        contact
-                                .frame(width: 195, height: 180)
-                                .background(.ultraThinMaterial)
-                                .clipShape(Circle())
-                                .offset(y: -30)
-
-                        }
-                        sheet
-                        .offset(y: -30)
-
+                  
+                    contact
+                    .frame(width: 300, height: 45)
+                    .background(.ultraThinMaterial)
+                    .cornerRadius(10)
+                
+                    terms
+                    .frame(width: 300, height: 45)
+                    .cornerRadius(10)
                     Spacer()
+                }
+                .padding(.bottom, 20)
+                
+                sheet
+                    .background(.black)
+                    .cornerRadius(10)
+                    .shadow(radius: 15)
                 }
             }
             .navigationBarHidden(true)
+            ZStack {
+                VStack {
+                    HStack {
+                        Image("logo")
+                                .resizable()
+                                .scaledToFit()
+                            .frame(width: 120, height: 80)
+                        Spacer()
+                    }
+                    Spacer()
+                }
+                .frame(width: 420)
+            }
         }
     }
 }
@@ -81,7 +90,6 @@ struct profileOutView: View {
 struct profileOutView_Previews: PreviewProvider {
     static var previews: some View {
         profileOutView(signInSuccess: .constant(false))
-            .preferredColorScheme(.dark)
     }
 }
 extension profileOutView {
@@ -91,15 +99,11 @@ private var terms: some View {
         termView()
     } label: {
         Spacer()
-        Image(systemName: "book.closed.fill")
-            .resizable()
-            .scaledToFit()
-            .frame(width: 40, height: 40)
-            .foregroundColor(.primary)
-            .padding(3)
+        
         Text("Terms & Conditions")
-            .foregroundColor(.primary)
-            .font(.system(size: 25, weight: .medium, design: .default))
+            .underline()
+            .foregroundColor(.white)
+            .font(.system(size: 15, weight: .medium, design: .default))
         Spacer()
     }
     
@@ -116,7 +120,7 @@ private var terms: some View {
                 .foregroundColor(.red)
                 .padding(3)
             Text("Contact Us")
-                .foregroundColor(.black)
+                .foregroundColor(.primary)
                 .font(.system(size: 25, weight: .medium, design: .default))
             Spacer()
         }
@@ -127,88 +131,89 @@ private var terms: some View {
             showingSheet.toggle()
         } label: {
             Text("Sign In")
-                .foregroundColor(Color.white)
-                .frame(width: 100, height: 50)
-                .background(Color.accentColor.opacity(0.8))
-                .cornerRadius(10)
+                .foregroundColor(.white)
+                .font(.system(size: 20, weight: .medium, design: .rounded))
+                .frame(width: 300, height: 50)
         }
                .sheet(isPresented: $showingSheet) {
-            ZStack{
-            VStack {
-                           Image("car")
-                               .resizable()
-                               .scaledToFit()
-                           .frame(width: 350, height: 400)
-                           .padding()
-                           .offset( y: -30)
-                           Spacer()
-                       }
-            VStack{
-                        VStack{
-                           Spacer()
-                           HStack {
-                               Text("Let's")
-                                   .font(.system(size: 50, weight: .medium, design: .default))
-                                   .padding()
+                       ZStack{
+                    Color.init("basic")
+                VStack {
+                               Image("car")
+                                   .resizable()
+                                   .scaledToFit()
+                               .frame(width: 350, height: 400)
+                               .padding()
+                               .offset( y: -30)
                                Spacer()
                            }
-                           .offset(y: 50)
-                        HStack {
-                            Text("Get")
-                                .font(.system(size: 50, weight: .medium, design: .default))
-                                .padding()
-                            Text("Started!")
-                                .font(.system(size: 50, weight: .medium, design: .default))
-                                .foregroundColor(.cyan)
-                                .offset(x: -10, y: 1)
-                            Spacer()
-                           }
-                           }
-                           .offset(y: 15)
-                        VStack{
-                            
-                           TextField("Username", text: $username)
-                               .padding()
-                               .frame(width: 350, height: 60)
-                               .background(.gray.opacity(0.1))
-                               .cornerRadius(24)
-                               .border(.red, width: CGFloat(wrongUsername))
-                           SecureField("Password", text: $password)
-                               .padding()
-                               .frame(width: 350, height: 60)
-                               .background(.gray.opacity(0.1))
-                               .cornerRadius(24)
-                               .border(.red, width: CGFloat(wrongPassword))
+                VStack{
+                            VStack{
+                               Spacer()
+                               HStack {
+                                   Text("Let's")
+                                       .font(.system(size: 50, weight: .medium, design: .default))
+                                       .padding()
+                                   Spacer()
+                               }
+                               .offset(y: 50)
+                            HStack {
+                                Text("Get")
+                                    .font(.system(size: 50, weight: .medium, design: .default))
+                                    .padding()
+                                Text("Started!")
+                                    .font(.system(size: 50, weight: .medium, design: .default))
+                                    .foregroundColor(.cyan)
+                                    .offset(x: -10, y: 1)
+                                Spacer()
+                               }
+                               }
+                               .offset(y: 15)
+                            VStack{
+                                
+                               TextField("Username", text: $username)
+                                   .padding()
+                                   .frame(width: 350, height: 60)
+                                   .background(.gray.opacity(0.1))
+                                   .cornerRadius(24)
+                                   .border(.red, width: CGFloat(wrongUsername))
+                               SecureField("Password", text: $password)
+                                   .padding()
+                                   .frame(width: 350, height: 60)
+                                   .background(.gray.opacity(0.1))
+                                   .cornerRadius(24)
+                                   .border(.red, width: CGFloat(wrongPassword))
+
+                               }
+                               .offset( y: 20)
+                               
+                               Button("Login") {
+                    if username.lowercased() == "mario2021" {
+                            wrongUsername = 0
+                            signInSuccess = true
+                            showingSheet.toggle()
+                    if password.lowercased() == "abc123" {
+                            wrongPassword = 0
+                                           
+                        } else {
+                            wrongPassword = 2
+                                    }
+                        } else {
+                            wrongUsername = 2
+                                }                    }
+                            .font(.system(size: 25, weight: .medium, design: .default))
+                            .foregroundColor(.white)
+                            .frame(width: 200, height: 50)
+                            .background(.blue)
+                            .cornerRadius(10)
+                            .offset( y: 40)
 
                            }
-                           .offset( y: 20)
+                           .padding()
+                           .offset(y: -50)
                            
-                           Button("Login") {
-                if username.lowercased() == "mario2021" {
-                        wrongUsername = 0
-                        signInSuccess = true
-                        showingSheet.toggle()
-                if password.lowercased() == "abc123" {
-                        wrongPassword = 0
-                                       
-                    } else {
-                        wrongPassword = 2
-                                }
-                    } else {
-                        wrongUsername = 2
-                            }                    }
-                        .font(.system(size: 25, weight: .medium, design: .default))
-                        .foregroundColor(.white)
-                        .frame(width: 200, height: 50)
-                        .background(.blue)
-                        .cornerRadius(10)
-                        .offset( y: 40)
-
                        }
-                       .padding()
-                       .offset(y: -50)
-                       
-                   }
+                   
                }
     }
 }

@@ -79,6 +79,7 @@ extension LocationDetailView{
             Text("^")
                     .rotationEffect(Angle(degrees: 90))
                     .rotationEffect(Angle(degrees: showList ? 90 : 0))
+                    .animation(.spring(), value: showList)
                     .padding(.top, 0)
             Text("More Information")
                 .onTapGesture {
@@ -86,8 +87,15 @@ extension LocationDetailView{
                 }
             }
             if showList{
-                Text("height: \(location.height) ")
+                    Text("height: \(location.height.formatted()) ")
+                            .padding(2)
+                    Text("free slots: \(location.free) / \(location.capacity)")
+                            .padding(2)
+                    Text("fee per hour: \(location.rate)")
+                    Spacer()
+                    .padding(.leading)
             }
+                
             if let url = URL(string: location.link) {
                 Link("Head there now!", destination: url)
                     .font(.headline)
