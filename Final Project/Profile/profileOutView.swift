@@ -137,38 +137,31 @@ private var terms: some View {
         }
                .sheet(isPresented: $showingSheet) {
                        ZStack{
-                    Color.init("basic")
+                           Color.white
                 VStack {
-                               Image("car")
-                                   .resizable()
-                                   .scaledToFit()
-                               .frame(width: 350, height: 400)
-                               .padding()
-                               .offset( y: -30)
+                        VStack{
                                Spacer()
-                           }
-                VStack{
-                            VStack{
-                               Spacer()
+                                Image("car")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 350, height: 400)
+                                .padding()
                                HStack {
                                    Text("Let's")
                                        .font(.system(size: 50, weight: .medium, design: .default))
-                                       .padding()
                                    Spacer()
                                }
-                               .offset(y: 50)
+                               .frame(width: 120, height: 6)
                             HStack {
                                 Text("Get")
                                     .font(.system(size: 50, weight: .medium, design: .default))
-                                    .padding()
+                                    .padding(.leading)
                                 Text("Started!")
                                     .font(.system(size: 50, weight: .medium, design: .default))
                                     .foregroundColor(.cyan)
-                                    .offset(x: -10, y: 1)
                                 Spacer()
                                }
                                }
-                               .offset(y: 15)
                             VStack{
                                 
                                TextField("Username", text: $username)
@@ -185,7 +178,6 @@ private var terms: some View {
                                    .border(.red, width: CGFloat(wrongPassword))
 
                                }
-                               .offset( y: 20)
                                
                                Button("Login") {
                     if username.lowercased() == "mario2021" {
@@ -206,12 +198,8 @@ private var terms: some View {
                             .frame(width: 200, height: 50)
                             .background(.blue)
                             .cornerRadius(10)
-                            .offset( y: 40)
-
-                           }
                            .padding()
-                           .offset(y: -50)
-                           
+                }
                        }
                    
                }
