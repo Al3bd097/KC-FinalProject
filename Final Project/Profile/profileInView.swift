@@ -29,7 +29,7 @@ struct profileInView: View {
                         .padding()
                         .offset( y: -40)
                     
-                    Text("Ahmed")
+                    Text("Abdullah")
                         .font(.system(size: 30, weight: .bold, design: .rounded))
                         .offset( y: -40)
                     VStack{

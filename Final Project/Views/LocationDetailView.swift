@@ -10,7 +10,7 @@ import MapKit
 
 struct LocationDetailView: View {
     @EnvironmentObject private var vm: LocationsViewModel
-    @State var showList = true
+    @State var showList = false
     let location: Location
     
     var body: some View {
@@ -79,7 +79,6 @@ extension LocationDetailView{
             Text("^")
                     .rotationEffect(Angle(degrees: 90))
                     .rotationEffect(Angle(degrees: showList ? 90 : 0))
-                    .animation(.spring(), value: showList)
                     .padding(.top, 0)
             Text("More Information")
                 .onTapGesture {
@@ -91,7 +90,7 @@ extension LocationDetailView{
                             .padding(2)
                     Text("free slots: \(location.free) / \(location.capacity)")
                             .padding(2)
-                    Text("fee per hour: \(location.rate)")
+                Text("fee per hour: \(location.rate.formatted())")
                     Spacer()
                     .padding(.leading)
             }

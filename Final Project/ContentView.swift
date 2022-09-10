@@ -16,11 +16,6 @@ struct ContentView: View {
         ZStack {
             
             TabView{
-//                homeScreen()
-//                    .tabItem {
-//                        Image(systemName: "house")
-//                        Text("Home")
-//                    }
                 
                 LocationsView()
                     .environmentObject(LocationsViewModel())
@@ -34,19 +29,15 @@ struct ContentView: View {
                         Image(systemName: "person.circle")
                         Text("Profile")
                     }
-                    
-                
             }
-            
         }
-        
-        
     }
     }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .preferredColorScheme(.dark)
             .environmentObject(LocationsViewModel())
     }
 }
